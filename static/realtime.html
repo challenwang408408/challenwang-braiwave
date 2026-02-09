@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brainwave</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/style.css?v=20260206-5">
+</head>
+<body>
+    <div class="container">
+        <div id="connectionStatus" class="connection-status"></div>
+        <button id="themeToggle" class="theme-toggle">🌙</button>
+        <h1>Brainwave</h1>
+        <div class="keyboard-hint">按 <kbd>空格键</kbd> 快速开始/停止录音</div>
+        <div class="model-selector">
+            <label for="modelSelect">模型选择:</label>
+            <select id="modelSelect">
+                <option value="gpt-realtime-mini-2025-12-15" selected>gpt-realtime-mini-2025-12-15</option>
+                <option value="gpt-realtime">GPT Realtime</option>
+            </select>
+        </div>
+        <div id="timer" class="timer">00:00</div>
+        <div class="controls-wrapper">
+            <button id="recordButton" aria-label="开始/停止录音">
+                <span class="button-text">开始</span>
+            </button>
+            <button id="replayButton" class="replay-icon-button" disabled title="重放最近的录音" aria-label="重放录音">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                    <path d="M21 3v5h-5"></path>
+                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                    <path d="M3 21v-5h5"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="transcript-container">
+            <label for="transcript" class="section-label">原始文本</label>
+            <textarea id="transcript" placeholder="录音转换的文本将显示在这里..."></textarea>
+            <button id="copyButton" class="copy-button" aria-label="复制文本">复制</button>
+        </div>
+        <div class="button-container">
+            <button id="readabilityButton" class="action-button" aria-label="优化可读性">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+                可读性优化
+            </button>
+            <button id="correctnessButton" class="action-button" aria-label="检查正确性">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                正确性检查
+            </button>
+        </div>
+        <div class="enhanced-transcript-container">
+            <label for="enhancedTranscript" class="section-label">优化后文本</label>
+            <textarea id="enhancedTranscript" placeholder="优化后的文本将显示在这里..."></textarea>
+            <button id="copyEnhancedButton" class="copy-button" aria-label="复制优化文本">复制</button>
+        </div>
+    </div>
+
+    <!-- Mobile: prominent "tap to copy" bar (shown after transcription completes) -->
+    <div id="mobileCopyBar" class="mobile-copy-bar" aria-hidden="true">
+        <button id="mobileCopyButton" class="mobile-copy-button" aria-label="点一下复制">点一下复制</button>
+    </div>
+
+    <!-- Cache-busting: bump version when deploying to ensure mobile browsers fetch latest JS -->
+    <script src="static/main.js?v=20260206-5"></script>
+</body>
+</html>

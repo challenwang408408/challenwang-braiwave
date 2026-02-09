@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude --version)",
+      "WebSearch",
+      "Bash(npm update:*)",
+      "Bash(npm outdated:*)",
+      "WebFetch(domain:platform.claude.com)",
+      "WebFetch(domain:code.claude.com)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat\\(ui\\): 实现 Claude AI 风格的配色方案和视觉设计优化\n\nStage 1 完成:\n- 引入 CSS 变量系统,支持深浅主题动态切换\n- 采用 Claude AI 风格的暖色调配色\\(橙棕色系\\)\n- 优化所有交互元素的悬停和焦点状态\n- 改进按钮、输入框、选择器的视觉设计\n- 添加流畅的过渡动画和阴影效果\n- 优化移动端响应式设计\n- 添加无障碍支持\\(焦点可见性、减少动画选项\\)\n- 自定义滚动条和选中文本样式\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git restore:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
